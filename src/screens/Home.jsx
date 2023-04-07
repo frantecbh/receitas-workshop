@@ -54,12 +54,13 @@ export function Home() {
         </View>
 
         <FlatList
-          data={receitas}
+          data={receitasFiltradas}
           keyExtractor={(item) => String(item.id)}
           renderItem={
             ({item}) => <CardList data={item} />
           }
           showsVerticalScrollIndicator={false}
+          ListEmptyComponent={() => <Text>Receita não encontrada!</Text>}
         />
 
     </SafeAreaView>
